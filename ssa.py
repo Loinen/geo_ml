@@ -14,7 +14,7 @@ plt.rcParams['axes.prop_cycle'] = cycler(color=cols)
 
 """# 1. Загрузка данных <a name="Section1"></a>"""
 
-data = pd.read_csv("data_gulf_of_finland.csv")  # берем ежедневные данные о температуре, собранные с 1 станции в ЛО
+data = pd.read_csv("data/data_gulf_of_finland.csv")  # берем ежедневные данные о температуре, собранные с 1 станции в ЛО
 data = data.loc[data["NAME"] == "BELOGORKA, RS"][122:-2]
 # изначально у нас 2651 записей с  2012 по 2020 год, обрезаем "лишние" (2 дня за 2020 и сентябрь-декабрь 20212)
 data = data.set_index("DATE")  # установим дату в качестве индекса
