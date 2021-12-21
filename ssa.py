@@ -15,8 +15,8 @@ plt.rcParams['axes.prop_cycle'] = cycler(color=cols)
 """# 1. Загрузка данных <a name="Section1"></a>"""
 
 data = pd.read_csv("data/data_gulf_of_finland.csv")  # берем ежедневные данные о температуре, собранные с 1 станции в ЛО
-data = data.loc[data["NAME"] == "BELOGORKA, RS"][122:-2]
-# изначально у нас 2651 записей с  2012 по 2020 год, обрезаем "лишние" (2 дня за 2020 и сентябрь-декабрь 20212)
+data = data.loc[data["NAME"] == "BELOGORKA, RS"][122:-500]
+# изначально у нас 2651 записей с  2012 по 2020 год, обрезаем "лишние" (2 дня за 2020 и сентябрь-декабрь 2012)
 data = data.set_index("DATE")  # установим дату в качестве индекса
 data.TEMP = (data.TEMP - 32) * 5 / 9  # преобразуем из градусов по Фаренгейту в градусы по Цельсию
 print(data["TEMP"])

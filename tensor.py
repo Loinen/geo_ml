@@ -8,8 +8,7 @@ from sklearn.decomposition import FactorAnalysis, PCA
 import tensorly as tl
 from tensorly import unfold as tl_unfold
 from tensorly.decomposition import parafac
-# from scipy.linalg import khatri_rao
-from tensorly.tenalg import khatri_rao
+from tensortools.operations import khatri_rao
 from tensor_utils import *
 
 """### Пример Тензора"""
@@ -104,7 +103,7 @@ factors = (normalize(a), normalize(b), normalize(c))
 
 fig, axes = plt.subplots(rank, 3, figsize=(8, int(rank * 1.2 + 1)))
 compare_factors(factors, factors_actual, factors_ind=[1, 0, 2], fig=fig);
-
+plt.show()
 """### Сравнение трех подходов
 
 #### Ошибка восстановления
